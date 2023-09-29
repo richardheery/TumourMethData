@@ -15,6 +15,7 @@ includes the following datasets:
 \details{
 \itemize{
 \item cpgea_wgbs_hg38 : WGBS Data (CpG sites only) from 187 pairs of matching human prostate tumours and normal prostate samples from 'Li, Jing, et al. "A genomic and epigenomic atlas of prostate cancer in Asian populations." Nature 580.7801 (2020): 93-99.'
+\item tcga_wgbs_hg38 : WGBS Data (CpG sites only) from 39 bladder, breast, colon, glioblastoma, lung, rectal stomach and uterine tumour samples and and 8 matching normal samples from "Zhou, Wanding, et al. "DNA methylation loss in late-replicating domains is linked to mitotic cell division." Nature genetics 50.4 (2018): 591-602."
 }
 }
 \seealso{
