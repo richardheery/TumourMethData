@@ -12,7 +12,6 @@
 #' @docType package
 #' @name TumourMethData-package
 #' @import GenomicRanges
-#' @import ggplot2
 #' @import SummarizedExperiment
 #' @md
 "_PACKAGE"

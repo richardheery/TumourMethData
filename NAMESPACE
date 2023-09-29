@@ -2,4 +2,3 @@
 
 import(GenomicRanges)
 import(SummarizedExperiment)
-import(ggplot2)

@@ -1,11 +1,11 @@
 Package: TumourMethData
-Title: What the Package Does (One Line, Title Case)
+Title: A Collection of DNA Methylation Datasets for Human Tumour Samples and Matching Normal Samples
 Version: 0.99.0
 Date: 2023-09-29
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Richard", "Heery", , "richardheery@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8067-3114"))
+Description: TumourMethData collects tumour methylation data from a variety of different tumour types (and also matching normal samples where available) and produced with different technologies (e.g. WGBS, RRBS and methylation arrays) and provides them as RangedSummarizedExperiments, facilitating easy extraction of methylation data for regions of interest.
 License: Artistic-2.0
 URL: https://github.com/richardheery/TumourMethData
 BugReports: https://support.bioconductor.org/tag/TumourMethData
@@ -22,6 +22,7 @@ Imports:
     HDF5Array,
     rhdf5
 Suggests: 
+    ggplot2,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
