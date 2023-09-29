@@ -1,0 +1,25 @@
+#' TumourMethData: A collection of DNA methylation datasets for human tumour samples and matching normal samples
+#' 
+#' TumourMethData collects tumour methylation data from a variety of different tumour types 
+#' (and also matching normal samples where available) and produced with different technologies 
+#' (e.g. WGBS, RRBS and methylation arrays) and provides them as RangedSummarizedExperiments, 
+#' facilitating easy extraction of methylation data for regions of interest. At present, 
+#' includes the following datasets: 
+#' 
+#' * cpgea_wgbs_hg38 : WGBS Data (CpG sites only) from 187 pairs of matching human prostate tumours and normal prostate samples from 'Li, Jing, et al. "A genomic and epigenomic atlas of prostate cancer in Asian populations." Nature 580.7801 (2020): 93-99.'
+#' 
+#' @author Richard Heery
+#' @docType package
+#' @name TumourMethData-package
+#' @import GenomicRanges
+#' @import ggplot2
+#' @import SummarizedExperiment
+#' @md
+"_PACKAGE"
+
+#' TumourMethDatasets
+#'
+#' A table describing the datasets available from TumourMethData.
+#'
+#'@format A data.frame with one row for each dataset
+"TumourMethDatasets"

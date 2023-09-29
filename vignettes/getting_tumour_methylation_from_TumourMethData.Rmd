@@ -1,0 +1,36 @@
+---
+title: "Getting Tumour Methylation Data with TumourMethData"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{getting_tumour_methylation_from_TumourMethData}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, message = F}
+library(TumourMethData)
+```
+
+## Introduction
+
+TumourMethData collects tumour methylation data from a variety of different tumour types 
+(and also matching normal samples where available) and produced with different technologies
+(e.g. WGBS, RRBS and methylation arrays) and provides them as RangedSummarizedExperiments,
+facilitating easy extraction of methylation data for regions of interest.
+
+We can view the available datasets with `TumourMethDatasets`.
+
+```{r, eval=TRUE}
+# Load required objects
+data("TumourMethDatasets", package = "TumourMethData")
+print(TumourMethDatasets)
+```
+
+

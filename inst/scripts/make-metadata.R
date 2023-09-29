@@ -1,6 +1,6 @@
-# Create ExperimentHub metadata for cpgea_meth_rse_hg38
-cpgea_meth_rse_hg38_metadata = data.frame(
-  Title = "cpgea_meth_rse_hg38",
+# Create ExperimentHub metadata for cpgea_wgbs_hg38
+cpgea_wgbs_hg38_metadata = data.frame(
+  Title = "cpgea_wgbs_hg38",
   Description = "A HDF5-backed RangedSummarizedExperiment for WGBS Data (CpG sites only) from matching human prostate tumours and normal prostate samples",
   BiocVersion = "3.18",
   Genome = "hg38",
@@ -16,5 +16,5 @@ cpgea_meth_rse_hg38_metadata = data.frame(
   DispatchClass = "H5File",
   RDataPath = "TumourMethData"
 )
-write.csv(cpgea_meth_rse_hg38_metadata, "../extdata/metadata.csv", row.names = F)
+write.csv(cpgea_wgbs_hg38_metadata, "../extdata/metadata.csv", row.names = F)
 ExperimentHubData::makeExperimentHubMetadata("~/git_repos/TumourMethData/")
