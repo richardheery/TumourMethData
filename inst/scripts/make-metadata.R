@@ -16,7 +16,7 @@ cpgea_wgbs_hg38_metadata = data.frame(
   DispatchClass = "H5File",
   RDataPath = "TumourMethData"
 )
-write.csv(cpgea_wgbs_hg38_metadata, "../extdata/cpgea_wgbs_hg38_metadata_metadata.csv", row.names = F)
+write.csv(cpgea_wgbs_hg38_metadata, "../extdata/cpgea_wgbs_hg38_metadata.csv", row.names = F)
 ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "cpgea_wgbs_hg38_metadata.csv")
 
 # Create ExperimentHub metadata for tcga_wgbs_hg38
