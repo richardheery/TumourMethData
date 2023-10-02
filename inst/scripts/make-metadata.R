@@ -33,10 +33,10 @@ tcga_wgbs_hg38_metadata = data.frame(
   Coordinate_1_based = TRUE,
   DataProvider = "Center for Epigenetics, Van Andel Research Institute, Grand Rapids, MI, USA",
   Maintainer = "Richard Heery <richardheery@gmail.com>",
-  Location_Prefix = "https://zenodo.org/record/8397049",
+  Location_Prefix = "https://zenodo.org/",
   RDataClass = "RangedSummarizedExperiment",
   DispatchClass = "H5File",
-  RDataPath = "files/se.rds?download=1:files/se.rds?download=1"
+  RDataPath = "record/8397049/files/se.rds:record/8397049/files/assays.h5"
 )
 write.csv(tcga_wgbs_hg38_metadata, "../extdata/tcga_wgbs_hg38_metadata.csv", row.names = F)
 ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "tcga_wgbs_hg38_metadata.csv")
