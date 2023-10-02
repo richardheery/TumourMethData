@@ -5,6 +5,8 @@ TumourMethDatasets = data.frame(
   tumour_site = c("prostate", "various"),
   number_tumour_samples = c(187, 39), 
   number_normal_samples = c(187, 8),
+  coverage_available = c(FALSE, FALSE),
+  notes = c("", ""), 
   original_publication = c(
     "A genomic and epigenomic atlas of prostate cancer in Asian populations; Nature; 2020", 
     "DNA methylation loss in late-replicating domains is linked to mitotic cell division; Nature genetics; 2018"
