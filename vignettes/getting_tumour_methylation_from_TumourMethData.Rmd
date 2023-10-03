@@ -33,4 +33,7 @@ data("TumourMethDatasets", package = "TumourMethData")
 print(TumourMethDatasets)
 ```
 
-
+## SessionInfo
+```{r}
+sessionInfo()
+```
