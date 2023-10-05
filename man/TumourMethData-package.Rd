@@ -4,18 +4,27 @@
 \name{TumourMethData-package}
 \alias{TumourMethData}
 \alias{TumourMethData-package}
-\title{TumourMethData: A collection of DNA methylation datasets for human tumour samples and matching normal samples}
+\title{TumourMethData: A collection of DNA methylation datasets for human tumour
+samples and matching normal samples}
 \description{
-TumourMethData collects tumour methylation data from a variety of different tumour types
-(and also matching normal samples where available) and produced with different technologies
-(e.g. WGBS, RRBS and methylation arrays) and provides them as RangedSummarizedExperiments,
-facilitating easy extraction of methylation data for regions of interest. At present,
-includes the following datasets:
+TumourMethData collects tumour methylation data from a variety of different
+tumour types (and also matching normal samples where available) and produced
+with different technologies (e.g. WGBS, RRBS and methylation arrays) and
+provides them as RangedSummarizedExperiments, facilitating easy extraction
+ofmethylation data for regions of interest. At present, includes the
+following datasets:
 }
 \details{
 \itemize{
-\item cpgea_wgbs_hg38 : WGBS Data (CpG sites only) from 187 pairs of matching human prostate tumours and normal prostate samples from 'Li, Jing, et al. "A genomic and epigenomic atlas of prostate cancer in Asian populations." Nature 580.7801 (2020): 93-99.'
-\item tcga_wgbs_hg38 : WGBS Data (CpG sites only) from 39 bladder, breast, colon, glioblastoma, lung, rectal stomach and uterine tumour samples and and 8 matching normal samples from "Zhou, Wanding, et al. "DNA methylation loss in late-replicating domains is linked to mitotic cell division." Nature genetics 50.4 (2018): 591-602."
+\item cpgea_wgbs_hg38 : WGBS Data (CpG sites only) from 187 pairs of matching
+human prostate tumours and normal prostate samples from Li, Jing, et al.
+"A genomic and epigenomic atlas of prostate cancer in Asian populations."
+Nature 580.7801 (2020): 93-99.'
+\item tcga_wgbs_hg38 : WGBS Data (CpG sites only) from 39 bladder, breast,
+colon, glioblastoma, lung, rectal stomach and uterine tumour samples and
+and 8 matching normal samples from "Zhou, Wanding, et al. "DNA methylation
+loss in late-replicating domains is linked to mitotic cell division."
+Nature genetics c50.4 (2018): 591-602."
 }
 }
 \seealso{
