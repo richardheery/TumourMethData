@@ -1,6 +1,6 @@
 Package: TumourMethData
 Title: A Collection of DNA Methylation Datasets for Human Tumour Samples and Matching Normal Samples
-Version: 0.99.1
+Version: 0.99.2
 Date: 2023-09-29
 Authors@R: 
     person("Richard", "Heery", , "richardheery@gmail.com", role = c("aut", "cre"),
