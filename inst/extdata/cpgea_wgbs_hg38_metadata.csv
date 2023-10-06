@@ -1,2 +1,4 @@
-"Title","Description","BiocVersion","Genome","SourceType","SourceUrl","SourceVersion","Species","TaxonomyId","Coordinate_1_based","DataProvider","Maintainer","RDataClass","DispatchClass","RDataPath"
-"cpgea_wgbs_hg38","A HDF5-backed RangedSummarizedExperiment for WGBS Data (CpG sites only) from matching human prostate tumours and normal prostate samples","3.18","hg38","BED","https://wangftp.wustl.edu/~hlee/SMMU/PC/WGBS_bedGraph/","1","Homo sapiens","9606",TRUE,"Washington University School of Medicine","Richard Heery <richardheery@gmail.com>","RangedSummarizedExperiment","H5File","TumourMethData"
+"Title","Description","BiocVersion","Genome","SourceType","SourceUrl","SourceVersion","Species","TaxonomyId","Coordinate_1_based","DataProvider","Maintainer","RDataClass","DispatchClass","Location_Prefix","RDataPath"
+"cpgea_wgbs_hg38","A HDF5-backed RangedSummarizedExperiment for WGBS Data 
+    (CpG sites only) from matching primary human prostate tumours and 
+    normal prostate samples","3.18","hg38","BED","https://wangftp.wustl.edu/~hlee/SMMU/PC/WGBS_bedGraph/","1","Homo sapiens","9606",TRUE,"Washington University School of Medicine","Richard Heery <richardheery@gmail.com>","RangedSummarizedExperiment","H5File","https://zenodo.org/","record/8411175/files/se.rds:record/8411175/files/assays.h5"
