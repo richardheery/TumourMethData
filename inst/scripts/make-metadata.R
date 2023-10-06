@@ -1,3 +1,27 @@
+# Create ExperimentHub metadata for tcga_wgbs_hg38
+tcga_wgbs_hg38_metadata = data.frame(
+  Title = "tcga_wgbs_hg38",
+  Description = "A HDF5-backed RangedSummarizedExperiment for WGBS Data 
+    (CpG sites only) from 39 bladder, breast, colon, glioblastoma, lung, 
+    rectal stomach and uterine primary tumour samples and 8 matching normal samples",
+  BiocVersion = "3.18",
+  Genome = "hg38",
+  SourceType = "BED",
+  SourceUrl = "https://zwdzwd.s3.amazonaws.com/directory_listing/trackHubs_TCGA_WGBS_hg38.html?prefix=trackHubs/TCGA_WGBS/hg38/bed/",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = TRUE,
+  DataProvider = "Center for Epigenetics, Van Andel Research Institute, Grand Rapids, MI, USA",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "RangedSummarizedExperiment",
+  DispatchClass = "H5File",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/8397049/files/se.rds:record/8397049/files/assays.h5"
+)
+write.csv(tcga_wgbs_hg38_metadata, "../extdata/tcga_wgbs_hg38_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "tcga_wgbs_hg38_metadata.csv")
+
 # Create ExperimentHub metadata for cpgea_wgbs_hg38
 cpgea_wgbs_hg38_metadata = data.frame(
   Title = "cpgea_wgbs_hg38",
@@ -25,49 +49,49 @@ ExperimentHubData::makeExperimentHubMetadata(
     pathToPackage = "~/git_repos/TumourMethData/", 
     fileName = "cpgea_wgbs_hg38_metadata.csv")
 
-# Create ExperimentHub metadata for tcga_wgbs_hg38
-tcga_wgbs_hg38_metadata = data.frame(
-  Title = "tcga_wgbs_hg38",
-  Description = "A HDF5-backed RangedSummarizedExperiment for WGBS Data 
-    (CpG sites only) from 39 bladder, breast, colon, glioblastoma, lung, 
-    rectal stomach and uterine primary tumour samples and 8 matching normal samples",
-  BiocVersion = "3.18",
-  Genome = "hg38",
-  SourceType = "BED",
-  SourceUrl = "https://zwdzwd.s3.amazonaws.com/directory_listing/trackHubs_TCGA_WGBS_hg38.html?prefix=trackHubs/TCGA_WGBS/hg38/bed/",
-  SourceVersion = "1",
-  Species = "Homo sapiens",
-  TaxonomyId = "9606",
-  Coordinate_1_based = TRUE,
-  DataProvider = "Center for Epigenetics, Van Andel Research Institute, Grand Rapids, MI, USA",
-  Maintainer = "Richard Heery <richardheery@gmail.com>",
-  RDataClass = "RangedSummarizedExperiment",
-  DispatchClass = "H5File",
-  Location_Prefix = "https://zenodo.org/",
-  RDataPath = "record/8397049/files/se.rds:record/8397049/files/assays.h5"
-)
-write.csv(tcga_wgbs_hg38_metadata, "../extdata/tcga_wgbs_hg38_metadata.csv", row.names = F)
-ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "tcga_wgbs_hg38_metadata.csv")
-
 # Create ExperimentHub metadata for MCRPC
 mcrpc_wgbs_hg38_metadata = data.frame(
   Title = "mcrpc_wgbs_hg38",
   Description = "A HDF5-backed RangedSummarizedExperiment for WGBS Data 
-    (CpG sites only) from 100 prostate metastases",
+    (CpG sites only) from 100 castration-resistant prostate cancer metastases",
   BiocVersion = "3.18",
   Genome = "hg38",
   SourceType = "BED",
-  SourceUrl = NA,
+  SourceUrl = "https://www.box.com/",
   SourceVersion = "1",
   Species = "Homo sapiens",
   TaxonomyId = "9606",
   Coordinate_1_based = TRUE,
   DataProvider = "University of California San Francisco",
   Maintainer = "Richard Heery <richardheery@gmail.com>",
-  Location_Prefix = "https://zenodo.org/",
   RDataClass = "RangedSummarizedExperiment",
   DispatchClass = "H5File",
-  RDataPath = "record/8397049/files/se.rds:record/8397049/files/assays.h5"
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/8413802/files/se.rds:record/8413802/files/assays.h5"
 )
-write.csv(mcrpc_wgbs_hg38_metadata, "../extdata/mcrpc_wgbs_hg38_metadata", row.names = F)
+write.csv(mcrpc_wgbs_hg38_metadata, "../extdata/mcrpc_wgbs_hg38_metadata.csv", row.names = F)
 ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "mcrpc_wgbs_hg38_metadata.csv")
+
+# Create ExperimentHub metadata for Cao Esophageal WGBS data
+cao_esophageal_wgbs_hg19_metadata = data.frame(
+  Title = "cao_esophageal_wgbs_hg19",
+  Description = "A HDF5-backed RangedSummarizedExperiment for WGBS Data 
+    (CpG sites only) from 10 esophageal squamous carcinomas and 9 matching 
+    normal esophageal samples",
+  BiocVersion = "3.18",
+  Genome = "hg19",
+  SourceType = "BED",
+  SourceUrl = "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE149608",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = TRUE,
+  DataProvider = "University of California San Francisco",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "RangedSummarizedExperiment",
+  DispatchClass = "H5File",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/8414527/files/se.rds:record/8414527/files/assays.h5"
+)
+write.csv(cao_esophageal_wgbs_hg19_metadata, "../extdata/cao_esophageal_wgbs_hg19_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "cao_esophageal_wgbs_hg19_metadata.csv")

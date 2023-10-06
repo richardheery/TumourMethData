@@ -1,0 +1,3 @@
+"Title","Description","BiocVersion","Genome","SourceType","SourceUrl","SourceVersion","Species","TaxonomyId","Coordinate_1_based","DataProvider","Maintainer","RDataClass","DispatchClass","Location_Prefix","RDataPath"
+"mcrpc_wgbs_hg38","A HDF5-backed RangedSummarizedExperiment for WGBS Data 
+    (CpG sites only) from 100 castration-resistant prostate cancer metastases","3.18","hg38","BED",NA,"1","Homo sapiens","9606",TRUE,"University of California San Francisco","Richard Heery <richardheery@gmail.com>","RangedSummarizedExperiment","H5File","https://zenodo.org/","record/8413802/files/se.rds:record/8413802/files/assays.h5"

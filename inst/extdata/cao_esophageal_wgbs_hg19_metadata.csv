@@ -1,0 +1,4 @@
+"Title","Description","BiocVersion","Genome","SourceType","SourceUrl","SourceVersion","Species","TaxonomyId","Coordinate_1_based","DataProvider","Maintainer","RDataClass","DispatchClass","Location_Prefix","RDataPath"
+"cao_esophageal_wgbs_hg19","A HDF5-backed RangedSummarizedExperiment for WGBS Data 
+    (CpG sites only) from 10 esophageal squamous carcinomas and 9 matching 
+    normal esophageal samples","3.18","hg19","BED","https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE149608","1","Homo sapiens","9606",TRUE,"University of California San Francisco","Richard Heery <richardheery@gmail.com>","RangedSummarizedExperiment","H5File","https://zenodo.org/","record/8414527/files/se.rds:record/8414527/files/assays.h5"
