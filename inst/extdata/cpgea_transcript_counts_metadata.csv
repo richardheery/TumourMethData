@@ -1,0 +1,4 @@
+"Title","Description","BiocVersion","Genome","SourceType","SourceUrl","SourceVersion","Species","TaxonomyId","Coordinate_1_based","DataProvider","Maintainer","RDataClass","DispatchClass","Location_Prefix","RDataPath"
+"cpgea_transcript_counts","Transcript counts for 126 pairs of the prostate tumour and 
+  matching normal prostate samples from cpgea_wgbs_hg38 quantified using 
+  Kallisto with Gencode version 38 transcript annotation","3.18","hg38","FASTQ","ftp://human.big.ac.cn/","1","Homo sapiens","9606",NA,"Washington University School of Medicine","Richard Heery <richardheery@gmail.com>","data.frame","FilePath","https://zenodo.org/","record/8422703/files/cpgea_transcript_counts.tsv.gz"

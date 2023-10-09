@@ -95,3 +95,102 @@ cao_esophageal_wgbs_hg19_metadata = data.frame(
 )
 write.csv(cao_esophageal_wgbs_hg19_metadata, "../extdata/cao_esophageal_wgbs_hg19_metadata.csv", row.names = F)
 ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "cao_esophageal_wgbs_hg19_metadata.csv")
+
+### Create metadata files for RNA-seq count datasets
+
+# Create ExperimentHub metadata for tcga_transcript_counts
+tcga_wgbs_sample_transcript_counts_metadata = data.frame(
+  Title = "tcga_wgbs_sample_transcript_counts",
+  Description = "Transcript counts for 23 tumour and 7 normal samples in 
+  tcga_wgbs_hg38 quantified using Kallisto with Gencode version 38 
+    transcript annotation",
+  BiocVersion = "3.18",
+  Genome = "hg38",
+  SourceType = "FASTQ",
+  SourceUrl = "https://portal.gdc.cancer.gov/repository",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = NA,
+  DataProvider = "Center for Epigenetics, Van Andel Research Institute, Grand Rapids, MI, USA",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "data.frame",
+  DispatchClass = "FilePath",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/8422703/files/tcga_wgbs_sample_transcript_counts.tsv.gz"
+)
+write.csv(tcga_transcript_counts_metadata, "../extdata/tcga_transcript_counts_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "tcga_transcript_counts_metadata.csv")
+
+# Create ExperimentHub metadata for cpgea_transcript_counts
+cpgea_transcript_counts_metadata = data.frame(
+  Title = "cpgea_transcript_counts",
+  Description = "Transcript counts for 126 pairs of the prostate tumour and 
+  matching normal prostate samples from cpgea_wgbs_hg38 quantified using 
+  Kallisto with Gencode version 38 transcript annotation",
+  BiocVersion = "3.18",
+  Genome = "hg38",
+  SourceType = "FASTQ",
+  SourceUrl = "ftp://human.big.ac.cn/",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = NA,
+  DataProvider = "Washington University School of Medicine",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "data.frame",
+  DispatchClass = "FilePath",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/8422703/files/cpgea_transcript_counts.tsv.gz"
+)
+write.csv(x = cpgea_transcript_counts_metadata, 
+    file = "../extdata/cpgea_transcript_counts_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(
+    pathToPackage = "~/git_repos/TumourMethData/", 
+    fileName = "cpgea_transcript_counts_metadata.csv")
+
+# Create ExperimentHub metadata for MCRPC
+mcrpc_transcript_counts_metadata = data.frame(
+  Title = "mcrpc_transcript_counts",
+  Description = "Transcript counts for 99 samples in mcrpc_wgbs_hg38 
+  quantified using Kallisto with Gencode version 38 transcript annotation",
+  BiocVersion = "3.18",
+  Genome = "hg38",
+  SourceType = "FASTQ",
+  SourceUrl = "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001648.v2.p1",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = NA,
+  DataProvider = "University of California San Francisco",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "data.frame",
+  DispatchClass = "FilePath",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/8422703/files/mcrpc_transcript_counts.tsv.gz"
+)
+write.csv(mcrpc_transcript_counts_metadata, "../extdata/mcrpc_transcript_counts_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "mcrpc_transcript_counts_metadata.csv")
+
+# Create ExperimentHub metadata for Cao Esophageal WGBS data
+cao_esophageal_transcript_counts_metadata = data.frame(
+  Title = "cao_esophageal_transcript_counts",
+  Description = "Transcript counts for all samples in cao_esophageal_wgbs_hg19 
+  quantified using Kallisto with Gencode version 38 transcript annotation",
+  BiocVersion = "3.18",
+  Genome = "hg38",
+  SourceType = "FASTQ",
+  SourceUrl = "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE149609",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = NA,
+  DataProvider = "University of California San Francisco",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "data.frame",
+  DispatchClass = "FilePath",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/8422703/files/cao_esophageal_transcript_counts.tsv.gz"
+)
+write.csv(cao_esophageal_transcript_counts_metadata, "../extdata/cao_esophageal_transcript_counts_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "cao_esophageal_transcript_counts_metadata.csv")

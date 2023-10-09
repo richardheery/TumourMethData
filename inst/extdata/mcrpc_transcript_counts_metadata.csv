@@ -1,0 +1,3 @@
+"Title","Description","BiocVersion","Genome","SourceType","SourceUrl","SourceVersion","Species","TaxonomyId","Coordinate_1_based","DataProvider","Maintainer","RDataClass","DispatchClass","Location_Prefix","RDataPath"
+"mcrpc_transcript_counts","Transcript counts for 99 samples in mcrpc_wgbs_hg38 
+  quantified using Kallisto with Gencode version 38 transcript annotation","3.18","hg38","FASTQ","https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001648.v2.p1","1","Homo sapiens","9606",NA,"University of California San Francisco","Richard Heery <richardheery@gmail.com>","data.frame","FilePath","https://zenodo.org/","record/8422703/files/mcrpc_transcript_counts.tsv.gz"

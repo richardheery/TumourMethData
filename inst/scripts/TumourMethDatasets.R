@@ -5,8 +5,9 @@ TumourMethDatasets = data.frame(
   genome_build = c("hg38", "hg38", "hg38", "hg19"),
   number_tumour_samples = c(187, 39, 100, 10), 
   number_normal_samples = c(187, 8, 0, 9),
-  coverage_available = c(FALSE, FALSE, TRUE, FALSE),
+  wgbs_coverage_available = c(FALSE, FALSE, TRUE, FALSE),
   dataset_size_gb = c(40, 5.4, 16, 2),
+  transcript_counts_available = c(TRUE, TRUE, TRUE, TRUE), 
   notes = c("", "", "", ""), 
   original_publication = c(
     "A genomic and epigenomic atlas of prostate cancer in Asian populations; Nature; 2020", 

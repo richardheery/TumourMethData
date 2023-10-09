@@ -1,0 +1,2 @@
+"Title","Description","BiocVersion","Genome","SourceType","SourceUrl","SourceVersion","Species","TaxonomyId","Coordinate_1_based","DataProvider","Maintainer","RDataClass","DispatchClass","Location_Prefix","RDataPath"
+"tcga_transcript_counts","RNA-Seq","3.18","hg38","FASTQ","https://portal.gdc.cancer.gov/repository","1","Homo sapiens","9606",NA,"Center for Epigenetics, Van Andel Research Institute, Grand Rapids, MI, USA","Richard Heery <richardheery@gmail.com>","data.frame","data.frame","https://zenodo.org/","record/8397049/files/se.rds:record/8397049/files/assays.h5"

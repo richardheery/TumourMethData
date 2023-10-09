@@ -1,4 +1,4 @@
-#' Download one of the datasets from TumourMethData
+#' Download one of the methylation datasets from TumourMethData
 #'
 #' @param dataset Name of the dataset to download. Must be one of the datsets listed in data(TumourMethDatasets). 
 #' @param dir Parent directory to save the HDF5 SummarizedExperiment datasets. A directory with the dataset name 
@@ -8,7 +8,7 @@
 #' @examples
 #' tcga_wgbs_hg38 = TumourMethData::download_dataset(dataset = "tcga_wgbs_hg38", dir = ".")
 #' print(tcga_wgbs_hg38)
-download_dataset = function(dataset, dir = "."){
+download_tumour_meth_dataset = function(dataset, dir = "."){
   
   # Load TumourMethDatasets
   data("TumourMethDatasets", package = "TumourMethData")
