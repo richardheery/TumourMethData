@@ -72,6 +72,30 @@ mcrpc_wgbs_hg38_metadata = data.frame(
 write.csv(mcrpc_wgbs_hg38_metadata, "../extdata/mcrpc_wgbs_hg38_metadata.csv", row.names = F)
 ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "mcrpc_wgbs_hg38_metadata.csv")
 
+# Create ExperimentHub metadata for MCRPC
+mcrpc_wgbs_hg38_chr11_metadata = data.frame(
+  Title = "mcrpc_wgbs_hg38_chr11",
+  Description = "A HDF5-backed RangedSummarizedExperiment for WGBS Data for 
+  chromosome 11 (CpG sites only) from 100 castration-resistant prostate cancer 
+  metastases",
+  BiocVersion = "3.18",
+  Genome = "hg38",
+  SourceType = "BED",
+  SourceUrl = "https://www.box.com/",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = TRUE,
+  DataProvider = "University of California San Francisco",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "RangedSummarizedExperiment",
+  DispatchClass = "H5File",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/8432665/files/se.rds:record/8432665/files/assays.h5"
+)
+write.csv(mcrpc_wgbs_hg38_chr11_metadata, "../extdata/mcrpc_wgbs_hg38_chr11_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "mcrpc_wgbs_hg38_chr11_metadata.csv")
+
 # Create ExperimentHub metadata for Cao Esophageal WGBS data
 cao_esophageal_wgbs_hg19_metadata = data.frame(
   Title = "cao_esophageal_wgbs_hg19",
