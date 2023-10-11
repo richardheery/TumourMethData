@@ -1,14 +1,14 @@
 #' Download one of the methylation datasets from TumourMethData
 #'
 #' @param dataset Name of the dataset to download. Must be one of the datsets listed in data(TumourMethDatasets). 
-#' @param dir Parent directory to save the HDF5 SummarizedExperiment datasets. A directory with the dataset name 
-#' will be created within this directory and populated with the RDS and HDF5 files constituting the dataset.  
+#' @param dir Parent directory to create links to the HDF5 SummarizedExperiment dataset. 
+#' A subdirectory with the dataset name will be created within this directory. Default is tempdir().
 #' @return A RangedSummarizedExperiment with methylation values from the specified dataset. 
 #' @export
 #' @examples
 #' tcga_wgbs_hg38 = TumourMethData::download_dataset(dataset = "tcga_wgbs_hg38", dir = ".")
 #' print(tcga_wgbs_hg38)
-download_tumour_meth_dataset = function(dataset, dir = "."){
+download_tumour_meth_dataset = function(dataset, dir = tempdir()){
   
   # Load TumourMethDatasets
   data("TumourMethDatasets", package = "TumourMethData")
@@ -47,10 +47,12 @@ download_tumour_meth_dataset = function(dataset, dir = "."){
   if(length(h5_file) == 0){stop("No HDF5 file was downloaded")}
   if(length(rds_file) == 0){stop("No RDS file was downloaded")}
   
-  # Create directory and move files into it
-  dir.create(paste(dir, dataset, sep = "/"))
-  file.rename(h5_file, paste(output_dir, "assays.h5", sep = "/"))
-  file.rename(rds_file, paste(output_dir, "se.rds", sep = "/"))
+  # Create directory and create symlinks to files in it
+  dir.create(output_dir)
+  h5_link = paste(output_dir, "assays.h5", sep = "/")
+  rds_link = paste(output_dir, "se.rds", sep = "/")
+  R.utils::createLink(link = h5_link, target = h5_file)
+  R.utils::createLink(link = rds_link, target = rds_file)
   
   # Create RangedSummarizedExperiment from output_dir
   rse = HDF5Array::loadHDF5SummarizedExperiment(output_dir)
