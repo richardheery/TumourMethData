@@ -1,4 +1,4 @@
-#' Download one of the methylation datasets from TumourMethData
+#' Download a WGBS methylation datasets from TumourMethData
 #'
 #' @param dataset Name of the dataset to download. Must be one of the datsets listed in data(TumourMethDatasets). 
 #' @param dir Parent directory to create links to the HDF5 SummarizedExperiment dataset. 
@@ -8,7 +8,7 @@
 #' @examples
 #' tcga_wgbs_hg38 = TumourMethData::download_dataset(dataset = "tcga_wgbs_hg38", dir = ".")
 #' print(tcga_wgbs_hg38)
-download_tumour_meth_dataset = function(dataset, dir = tempdir()){
+download_meth_dataset = function(dataset, dir = tempdir()){
   
   # Load TumourMethDatasets
   data("TumourMethDatasets", package = "TumourMethData")
@@ -27,10 +27,12 @@ download_tumour_meth_dataset = function(dataset, dir = tempdir()){
     paste(output_dir, "already exists")
   )}
   
+  # Extract the appropriate EH ID for the dataset
+  eh_id = .experimenthub_ids[dataset, "wgbs"]
+  
   # Create a connection to ExperimentHub and find the entry for the specified dataset
   eh  = ExperimentHub::ExperimentHub()
-  dataset_entry = BiocGenerics::subset(eh, title == dataset)
-  dataset_files = dataset_entry[[1]]
+  dataset_files = eh[[eh_id]]
   
   # Check that two files were downloaded
   if(length(dataset_files) != 2){
@@ -57,5 +59,33 @@ download_tumour_meth_dataset = function(dataset, dir = tempdir()){
   # Create RangedSummarizedExperiment from output_dir
   rse = HDF5Array::loadHDF5SummarizedExperiment(output_dir)
   return(rse)
+  
+}
+
+#' Download a RNA-Seq counts dataset from TumourMethData
+#'
+#' @param dataset Name of the dataset to download. Must be one of the datasets 
+#' listed in data(TumourMethDatasets) where `transcript_counts_available` is TRUE. 
+#' @return A data.frame with RNA-Seq counts calcualted using Kallisto. 
+#' @export
+#' @examples
+download_rnaseq_dataset = function(dataset){
+  
+  # Load TumourMethDatasets and filter for datasets with RNA-Seq
+  data("TumourMethDatasets", package = "TumourMethData")
+  TumourMethDatasets = TumourMethDatasets[TumourMethDatasets$transcript_counts_available, ]
+  
+  # Check that dataset is one of the allowed options
+  if(!dataset %in% TumourMethDatasets$dataset_name){
+    stop("dataset should be one of the dataset names in TumourMethDatasets where transcript_counts_available is TRUE")
+  }
+  
+  # Extract the appropriate EH ID for the dataset
+  eh_id = .experimenthub_ids[dataset, "rnaseq"]
+  
+  # Create a connection to ExperimentHub and find the entry for the specified dataset
+  eh  = ExperimentHub::ExperimentHub()
+  rnaseq_data = eh[[eh_id]]
+  return(rnaseq_data)
   
 }

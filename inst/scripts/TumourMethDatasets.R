@@ -17,3 +17,10 @@ TumourMethDatasets = data.frame(
   )
 )
 usethis::use_data(TumourMethDatasets, overwrite = T)
+
+.experimenthub_ids = data.frame(
+  wgbs = c("", "", "", ""),
+  rnaseq = c("", "", "", ""), 
+  row.names = c("cpgea_wgbs_hg38", "tcga_wgbs_hg38", "mcrpc_wgbs_hg38", "cao_esophageal_wgbs_hg19") 
+)
+usethis::use_data(experimenthub_ids, overwrite = T, internal = T)
