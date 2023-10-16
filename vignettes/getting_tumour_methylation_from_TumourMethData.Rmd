@@ -58,12 +58,12 @@ print(TumourMethDatasets)
 ```
 
 We use `download_meth_dataset` to download the methylation dataset we are
-interested in using esophageal cancer as an example.
+interested in using mcrpc_wgbs_hg38_chr11 as an example. 
 
 ```{r, eval=TRUE}
 # Download esophageal WGBS data
-esophageal_wgbs_hg19 = download_meth_dataset(dataset = "cao_esophageal_wgbs_hg19")
-print(esophageal_wgbs_hg19)
+mcrpc_wgbs_hg38_chr11 = download_meth_dataset(dataset = "mcrpc_wgbs_hg38_chr11")
+print(mcrpc_wgbs_hg38_chr11)
 ```
 
 ## SessionInfo

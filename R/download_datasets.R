@@ -6,8 +6,8 @@
 #' @return A RangedSummarizedExperiment with methylation values from the specified dataset. 
 #' @export
 #' @examples
-#' tcga_wgbs_hg38 = TumourMethData::download_dataset(dataset = "tcga_wgbs_hg38", dir = ".")
-#' print(tcga_wgbs_hg38)
+#' mcrpc_wgbs_hg38_chr11 = TumourMethData::download_meth_dataset(dataset = "mcrpc_wgbs_hg38_chr11")
+#' print(mcrpc_wgbs_hg38_chr11)
 download_meth_dataset = function(dataset, dir = tempdir()){
   
   # Load TumourMethDatasets

@@ -2,7 +2,7 @@
 % Please edit documentation in R/download_datasets.R
 \name{download_meth_dataset}
 \alias{download_meth_dataset}
-\title{Download one of the methylation datasets from TumourMethData}
+\title{Download a WGBS methylation dataset from TumourMethData}
 \usage{
 download_meth_dataset(dataset, dir = tempdir())
 }
@@ -16,9 +16,9 @@ A subdirectory with the dataset name will be created within this directory. Defa
 A RangedSummarizedExperiment with methylation values from the specified dataset.
 }
 \description{
-Download one of the methylation datasets from TumourMethData
+Download a WGBS methylation dataset from TumourMethData
 }
 \examples{
-tcga_wgbs_hg38 = TumourMethData::download_dataset(dataset = "tcga_wgbs_hg38", dir = ".")
-print(tcga_wgbs_hg38)
+mcrpc_wgbs_hg38_chr11 = TumourMethData::download_meth_dataset(dataset = "mcrpc_wgbs_hg38_chr11")
+print(mcrpc_wgbs_hg38_chr11)
 }
