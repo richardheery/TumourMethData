@@ -1,4 +1,4 @@
-#' Download a WGBS methylation datasets from TumourMethData
+#' Download a WGBS methylation dataset from TumourMethData
 #'
 #' @param dataset Name of the dataset to download. Must be one of the datsets listed in data(TumourMethDatasets). 
 #' @param dir Parent directory to create links to the HDF5 SummarizedExperiment dataset. 
