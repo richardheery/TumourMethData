@@ -5,18 +5,19 @@
 #' tumour types (and also matching normal samples where available) and produced
 #' with different technologies (e.g. WGBS, RRBS and methylation arrays) and 
 #' provides them as RangedSummarizedExperiments, facilitating easy extraction 
-#' ofmethylation data for regions of interest. At present, includes the 
+#' of methylation data for regions of interest. At present, includes the 
 #' following datasets: 
 #' 
-#' * cpgea_wgbs_hg38 : WGBS Data (CpG sites only) from 187 pairs of matching 
-#' human prostate tumours and normal prostate samples from Li, Jing, et al. 
-#' "A genomic and epigenomic atlas of prostate cancer in Asian populations." 
-#' Nature 580.7801 (2020): 93-99.'
-#' * tcga_wgbs_hg38 : WGBS Data (CpG sites only) from 39 bladder, breast, 
+#' * cpgea_wgbs_hg38: WGBS Data from 187 pairs of matching 
+#' human prostate tumours and normal prostate samples.
+#' * tcga_wgbs_hg38: WGBS Data from 39 bladder, breast, 
 #' colon, glioblastoma, lung, rectal stomach and uterine tumour samples and 
-#' and 8 matching normal samples from "Zhou, Wanding, et al. "DNA methylation 
-#' loss in late-replicating domains is linked to mitotic cell division."
-#' Nature genetics c50.4 (2018): 591-602." 
+#' and 8 matching normal samples.
+#' * mcrpc_wgbs_hg38: WGBS data from 100 prostate cancer metastases. 
+#' * mcrpc_wgbs_hg38_chr11: Subset of mcrpc_wgbs_hg38 with methylation values
+#' for just chromosome 11. 
+#' * cao_esophageal_wgbs_hg19: WGBS data for 10 squamous esophageal tumours and 
+#' 9 matching normal samples. 
 #' @author Richard Heery
 #' @docType package
 #' @name TumourMethData-package
