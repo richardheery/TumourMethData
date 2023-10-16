@@ -23,8 +23,13 @@ download_meth_dataset = function(dataset, dir = tempdir()){
   
   # Check if output_dir already exists
   if(!dir.exists(dir)){stop("dir doesn't exist")}
-  if(dir.exists(output_dir)){stop(
-    paste(output_dir, "already exists")
+  if(dir.exists(output_dir)){
+    print(paste("Directory", output_dir, "already exists. Trying to load a HDF5 SummarizedExperiment from there"))
+    tryCatch({
+      rse = HDF5Array::loadHDF5SummarizedExperiment(output_dir)
+      return(rse)
+    }, 
+      error = function(err) stop(paste(output_dir, "already exists and it does not contain a HDF5 SummarizedExperiment"))
   )}
   
   # Extract the appropriate EH ID for the dataset

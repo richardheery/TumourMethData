@@ -88,7 +88,7 @@ HDF5Array::quickResaveHDF5SummarizedExperiment(mcrpc_rse)
 file.rename("mcrpc_methrix_h5", "mcrpc_wgbs_hg38/")
 
 # Subset mcrpc_wgbs_hg38 for chromosome 11
-mcrpc_wgbs_hg38_chr11 = mcrpc_wgbs_hg38[seq.names(mcrpc_wgbs_hg38) == "chr11", ]
+mcrpc_wgbs_hg38_chr11 = mcrpc_wgbs_hg38[seqnames(mcrpc_wgbs_hg38) == "chr11", ]
 HDF5Array::saveHDF5SummarizedExperiment(mcrpc_wgbs_hg38_chr11, "mcrpc_wgbs_hg38_chr11")
 
 ### Make tcga_wgbs_hg38
