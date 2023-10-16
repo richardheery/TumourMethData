@@ -3,6 +3,8 @@
 #' @param dataset Name of the dataset to download. Must be one of the datsets listed in data(TumourMethDatasets). 
 #' @param dir Parent directory to create links to the HDF5 SummarizedExperiment dataset. 
 #' A subdirectory with the dataset name will be created within this directory. Default is tempdir().
+#' If a directory named `paste(dir, dataset, sep = "/")` already exists, 
+#' will attempt to load a HDF5 summarized experiment from there and return an error if this fails.
 #' @return A RangedSummarizedExperiment with methylation values from the specified dataset. 
 #' @export
 #' @examples
@@ -24,12 +26,12 @@ download_meth_dataset = function(dataset, dir = tempdir()){
   # Check if output_dir already exists
   if(!dir.exists(dir)){stop("dir doesn't exist")}
   if(dir.exists(output_dir)){
-    print(paste("Directory", output_dir, "already exists. Trying to load a HDF5 SummarizedExperiment from there"))
     tryCatch({
       rse = HDF5Array::loadHDF5SummarizedExperiment(output_dir)
+      print(paste("A HDF5 SummarizedExperiment is already present in", output_dir, "and is being returned"))
       return(rse)
     }, 
-      error = function(err) stop(paste(output_dir, "already exists and it does not contain a HDF5 SummarizedExperiment"))
+      error = function(err) stop(paste(output_dir, "already exists but it does not contain a HDF5 SummarizedExperiment"))
   )}
   
   # Extract the appropriate EH ID for the dataset
