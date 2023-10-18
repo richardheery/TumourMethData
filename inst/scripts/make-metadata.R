@@ -120,6 +120,29 @@ cao_esophageal_wgbs_hg19_metadata = data.frame(
 write.csv(cao_esophageal_wgbs_hg19_metadata, "../extdata/cao_esophageal_wgbs_hg19_metadata.csv", row.names = F)
 ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "cao_esophageal_wgbs_hg19_metadata.csv")
 
+# Create ExperimentHub metadata for TARGET rhabdoid data 
+target_rhabdoid_wgbs_hg19_metadata = data.frame(
+  Title = "target_rhabdoid_wgbs_hg19",
+  Description = "A HDF5-backed RangedSummarizedExperiment for WGBS Data 
+    (CpG sites only) from 69 childhood rhabdoid tumours",
+  BiocVersion = "3.18",
+  Genome = "hg19",
+  SourceType = "BigWig",
+  SourceUrl = "https://www.globus.org/",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = TRUE,
+  DataProvider = "Canada's Michael Smith Genome Sciences Centre",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "RangedSummarizedExperiment",
+  DispatchClass = "H5File",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/10019178/files/se.rds:record/10019178/files/assays.h5"
+)
+write.csv(target_rhabdoid_wgbs_hg19_metadata, "../extdata/target_rhabdoid_wgbs_hg19_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "target_rhabdoid_wgbs_hg19_metadata.csv")
+
 ### Create metadata files for RNA-seq count datasets
 
 # Create ExperimentHub metadata for tcga_transcript_counts
@@ -173,7 +196,7 @@ ExperimentHubData::makeExperimentHubMetadata(
     pathToPackage = "~/git_repos/TumourMethData/", 
     fileName = "cpgea_transcript_counts_metadata.csv")
 
-# Create ExperimentHub metadata for MCRPC
+# Create ExperimentHub metadata for MCRPC transcript counts
 mcrpc_transcript_counts_metadata = data.frame(
   Title = "mcrpc_transcript_counts",
   Description = "Transcript counts for 99 samples in mcrpc_wgbs_hg38 
@@ -196,7 +219,7 @@ mcrpc_transcript_counts_metadata = data.frame(
 write.csv(mcrpc_transcript_counts_metadata, "../extdata/mcrpc_transcript_counts_metadata.csv", row.names = F)
 ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "mcrpc_transcript_counts_metadata.csv")
 
-# Create ExperimentHub metadata for Cao Esophageal WGBS data
+# Create ExperimentHub metadata for Cao Esophageal transcript counts
 cao_esophageal_transcript_counts_metadata = data.frame(
   Title = "cao_esophageal_transcript_counts",
   Description = "Transcript counts for all samples in cao_esophageal_wgbs_hg19 
@@ -218,3 +241,26 @@ cao_esophageal_transcript_counts_metadata = data.frame(
 )
 write.csv(cao_esophageal_transcript_counts_metadata, "../extdata/cao_esophageal_transcript_counts_metadata.csv", row.names = F)
 ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "cao_esophageal_transcript_counts_metadata.csv")
+
+# Create ExperimentHub metadata for TARGET rhabdoid transcript counts
+target_rhabdoid_transcript_counts_metadata = data.frame(
+  Title = "target_rhabdoid_transcript_counts",
+  Description = "Transcript counts for 65 samples in target_rhabdoid_wgbs_hg19 
+  quantified using Kallisto with Gencode version 38 transcript annotation",
+  BiocVersion = "3.18",
+  Genome = "hg38",
+  SourceType = "FASTQ",
+  SourceUrl = "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000470.v19.p8",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = NA,
+  DataProvider = "Canada's Michael Smith Genome Sciences Centre",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "data.frame",
+  DispatchClass = "FilePath",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "records/10019178/files/target_rhabdoid_kallisto_counts_all_transcripts.tsv.gz"
+)
+write.csv(target_rhabdoid_transcript_counts_metadata, "../extdata/target_rhabdoid_transcript_counts_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "target_rhabdoid_transcript_counts_metadata.csv")

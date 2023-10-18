@@ -1,0 +1,3 @@
+"Title","Description","BiocVersion","Genome","SourceType","SourceUrl","SourceVersion","Species","TaxonomyId","Coordinate_1_based","DataProvider","Maintainer","RDataClass","DispatchClass","Location_Prefix","RDataPath"
+"target_rhabdoid_wgbs_hg19","A HDF5-backed RangedSummarizedExperiment for WGBS Data 
+    (CpG sites only) from 69 childhood rhabdoid tumours","3.18","hg19","BigWig","https://www.globus.org/","1","Homo sapiens","9606",TRUE,"Canada's Michael Smith Genome Sciences Centre","Richard Heery <richardheery@gmail.com>","RangedSummarizedExperiment","H5File","https://zenodo.org/","record/10019178/files/se.rds:record/10019178/files/assays.h5"
