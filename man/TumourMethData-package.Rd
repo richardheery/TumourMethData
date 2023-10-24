@@ -26,6 +26,7 @@ and 8 matching normal samples.
 for just chromosome 11.
 \item cao_esophageal_wgbs_hg19: WGBS data for 10 squamous esophageal tumours and
 9 matching normal samples.
+\item target_rhabdoid_wgbs_hg19: WGBS data for 69 childhood rhabdoid tumours.
 }
 }
 \seealso{

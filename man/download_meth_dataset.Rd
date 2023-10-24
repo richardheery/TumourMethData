@@ -7,16 +7,20 @@
 download_meth_dataset(dataset, dir = tempdir())
 }
 \arguments{
-\item{dataset}{Name of the dataset to download. Must be one of the datsets listed in data(TumourMethDatasets).}
+\item{dataset}{Name of the dataset to download WGBS data from. Must be one of the datsets listed in data(TumourMethDatasets).}
 
 \item{dir}{Parent directory to create links to the HDF5 SummarizedExperiment dataset.
-A subdirectory with the dataset name will be created within this directory. Default is tempdir().}
+A subdirectory with the dataset name will be created within this directory. Default is tempdir().
+If a directory named \code{paste(dir, dataset, sep = "/")} already exists,
+will attempt to load a HDF5 summarized experiment from there and return an error if this fails.}
 }
 \value{
 A RangedSummarizedExperiment with methylation values from the specified dataset.
 }
 \description{
-Download a WGBS methylation dataset from TumourMethData
+The HDF5 file and RDS file to construct a RangedSummarizedExperiment for the specified dataset
+are downloaded into the ExperimentHub cache located at \code{ExperimentHub::getExperimentHubOption("cache")}
+and symbolic links to these are created in the specified directory by \code{dir}.
 }
 \examples{
 mcrpc_wgbs_hg38_chr11 = TumourMethData::download_meth_dataset(dataset = "mcrpc_wgbs_hg38_chr11")
