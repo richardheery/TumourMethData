@@ -100,7 +100,7 @@ download_rnaseq_dataset = function(dataset){
   # Create a connection to ExperimentHub and find the entry for the specified dataset
   eh  = ExperimentHub::ExperimentHub()
   rnaseq_counts_file = eh[[eh_id]]
-  rnaseq_data = read.table(rnaseq_counts_file, sep = "\t", row.names = 1)
+  rnaseq_data = read.csv(rnaseq_counts_file, sep = "\t", row.names = 1)
   return(rnaseq_data)
   
 }
