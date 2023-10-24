@@ -1,6 +1,10 @@
 #' Download a WGBS methylation dataset from TumourMethData
+#' 
+#' The HDF5 file and RDS file to construct a RangedSummarizedExperiment for the specified dataset 
+#' are downloaded into the ExperimentHub cache located at `ExperimentHub::getExperimentHubOption("cache")`
+#' and symbolic links to these are created in the specified directory by `dir`. 
 #'
-#' @param dataset Name of the dataset to download. Must be one of the datsets listed in data(TumourMethDatasets). 
+#' @param dataset Name of the dataset to download WGBS data from. Must be one of the datsets listed in data(TumourMethDatasets). 
 #' @param dir Parent directory to create links to the HDF5 SummarizedExperiment dataset. 
 #' A subdirectory with the dataset name will be created within this directory. Default is tempdir().
 #' If a directory named `paste(dir, dataset, sep = "/")` already exists, 
@@ -69,11 +73,14 @@ download_meth_dataset = function(dataset, dir = tempdir()){
   
 }
 
-#' Download a RNA-Seq counts dataset from TumourMethData
+#' Download an RNA-Seq counts dataset from TumourMethData
+#' 
+#' A TSV file with the RNA-Seq counts is downloaded into the ExperimentHub cache 
+#' located at `ExperimentHub::getExperimentHubOption("cache")` and is read into R as a data.frame. 
 #'
 #' @param dataset Name of the dataset to download. Must be one of the datasets 
 #' listed in data(TumourMethDatasets) where `transcript_counts_available` is TRUE. 
-#' @return A data.frame with RNA-Seq counts calcualted using Kallisto. 
+#' @return A data.frame with RNA-Seq counts calculated using Kallisto. 
 #' @export
 #' @examples
 download_rnaseq_dataset = function(dataset){
@@ -92,7 +99,8 @@ download_rnaseq_dataset = function(dataset){
   
   # Create a connection to ExperimentHub and find the entry for the specified dataset
   eh  = ExperimentHub::ExperimentHub()
-  rnaseq_data = eh[[eh_id]]
+  rnaseq_counts_file = eh[[eh_id]]
+  rnaseq_data = read.table(rnaseq_counts_file, sep = "\t", row.names = 1)
   return(rnaseq_data)
   
 }

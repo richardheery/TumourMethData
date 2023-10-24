@@ -25,8 +25,8 @@ TumourMethDatasets = data.frame(
 usethis::use_data(TumourMethDatasets, overwrite = T)
 
 .experimenthub_ids = data.frame(
-  wgbs = c("EH8524", "EH8425", "EH8526", "EH8527", "EH8528"),
-  rnaseq = c("", "", "", "", ""), 
-  row.names = c("tcga_wgbs_hg38", "mcrpc_wgbs_hg38", "cpgea_wgbs_hg38", "cao_esophageal_wgbs_hg19", "mcrpc_wgbs_hg38_chr11") 
+  wgbs = c("EH8424", "EH8525", "EH8526", "EH8527", "EH8528", "EH8534"),
+  rnaseq = c("EH8533", "EH8531", "EH8532", "EH8530", "EH8531", "EH8529"), 
+  row.names = c("tcga_wgbs_hg38", "mcrpc_wgbs_hg38", "cpgea_wgbs_hg38", "cao_esophageal_wgbs_hg19", "mcrpc_wgbs_hg38_chr11", "target_rhabdoid_wgbs_hg19") 
 )
 usethis::use_data(.experimenthub_ids, overwrite = T, internal = T)
