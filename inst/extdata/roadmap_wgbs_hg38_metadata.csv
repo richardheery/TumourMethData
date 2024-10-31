@@ -1,0 +1,3 @@
+"Title","Description","BiocVersion","Genome","SourceType","SourceUrl","SourceVersion","Species","TaxonomyId","Coordinate_1_based","DataProvider","Maintainer","RDataClass","DispatchClass","Location_Prefix","RDataPath"
+"roadmap_wgbs_hg38","A HDF5-backed RangedSummarizedExperiment for WGBS Data 
+    (CpG sites only) for 38 normal human tissue samples from the Roadmap Epigenomics Project","3.20","hg38","BED","https://www.encodeproject.org/","1","Homo sapiens","9606",TRUE,"NIH Roadmap Epigenomics Mapping Consortium","Richard Heery <richardheery@gmail.com>","RangedSummarizedExperiment","H5File","https://zenodo.org/","record/13902805/files/se.rds:record/13902805/files/assays.h5"

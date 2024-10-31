@@ -1,3 +1,26 @@
+# Create ExperimentHub metadata for roadmap_wgbs_hg38
+roadmap_wgbs_hg38_metadata = data.frame(
+  Title = "roadmap_wgbs_hg38",
+  Description = "A HDF5-backed RangedSummarizedExperiment for WGBS Data 
+    (CpG sites only) for 38 normal human tissue samples from the Roadmap Epigenomics Project",
+  BiocVersion = "3.20",
+  Genome = "hg38",
+  SourceType = "BED",
+  SourceUrl = "https://www.encodeproject.org/",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = TRUE,
+  DataProvider = "NIH Roadmap Epigenomics Mapping Consortium",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "RangedSummarizedExperiment",
+  DispatchClass = "H5File",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/13902805/files/se.rds:record/13902805/files/assays.h5"
+)
+write.csv(roadmap_wgbs_hg38_metadata, "../extdata/roadmap_wgbs_hg38_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "roadmap_wgbs_hg38_metadata.csv")
+
 # Create ExperimentHub metadata for tcga_wgbs_hg38
 tcga_wgbs_hg38_metadata = data.frame(
   Title = "tcga_wgbs_hg38",
@@ -142,6 +165,29 @@ target_rhabdoid_wgbs_hg19_metadata = data.frame(
 )
 write.csv(target_rhabdoid_wgbs_hg19_metadata, "../extdata/target_rhabdoid_wgbs_hg19_metadata.csv", row.names = F)
 ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "target_rhabdoid_wgbs_hg19_metadata.csv")
+
+# Create ExperimentHub metadata for TCGA array data
+tcga_450k_array_hg19_metadata = data.frame(
+  Title = "tcga_450k_array_hg19",
+  Description = "A HDF5-backed RangedSummarizedExperiment for Infinium HumanMethylation450 BeadChip 
+    array methylation data for all TCGA samples",
+  BiocVersion = "3.20",
+  Genome = "hg19",
+  SourceType = "TSV",
+  SourceUrl = "https://gdc.cancer.gov/",
+  SourceVersion = "1",
+  Species = "Homo sapiens",
+  TaxonomyId = "9606",
+  Coordinate_1_based = TRUE,
+  DataProvider = "Genomic Data Commons",
+  Maintainer = "Richard Heery <richardheery@gmail.com>",
+  RDataClass = "RangedSummarizedExperiment",
+  DispatchClass = "H5File",
+  Location_Prefix = "https://zenodo.org/",
+  RDataPath = "record/10019178/files/se.rds:record/10019178/files/assays.h5"
+)
+write.csv(tcga_450k_array_hg19_metadata, "../extdata/tcga_450k_array_hg19_metadata.csv", row.names = F)
+ExperimentHubData::makeExperimentHubMetadata(pathToPackage = "~/git_repos/TumourMethData/", fileName = "tcga_450k_array_hg19_metadata.csv")
 
 ### Create metadata files for RNA-seq count datasets
 
