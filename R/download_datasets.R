@@ -62,3 +62,31 @@ download_meth_dataset = function(dataset, dir = getwd()){
   return(rse)
  
 }
+
+#' Download a RNA-Seq counts dataset from TumourMethData
+#'
+#' @param dataset Name of the dataset to download. Must be one of the datasets 
+#' listed in data(TumourMethDatasets) where `transcript_counts_available` is TRUE. 
+#' @return A data.frame with RNA-Seq counts calcualted using Kallisto. 
+#' @export
+#' @examples
+download_rnaseq_dataset = function(dataset){
+  
+  # Load TumourMethDatasets and filter for datasets with RNA-Seq
+  data("TumourMethDatasets", package = "TumourMethData")
+  TumourMethDatasets = TumourMethDatasets[TumourMethDatasets$transcript_counts_available, ]
+  
+  # Check that dataset is one of the allowed options
+  if(!dataset %in% TumourMethDatasets$dataset_name){
+    stop("dataset should be one of the dataset names in TumourMethDatasets where transcript_counts_available is TRUE")
+  }
+  
+  # Extract the appropriate EH ID for the dataset
+  eh_id = .experimenthub_ids[dataset, "rnaseq"]
+  
+  # Create a connection to ExperimentHub and find the entry for the specified dataset
+  eh  = ExperimentHub::ExperimentHub()
+  rnaseq_data = eh[[eh_id]]
+  return(rnaseq_data)
+  
+}
