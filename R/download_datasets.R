@@ -21,12 +21,12 @@ download_meth_dataset = function(dataset, dir = getwd()){
   if(!dataset %in% TumourMethDatasets$dataset_name){
     stop("dataset should be one of the dataset names in TumourMethDatasets")
   }
+    
+  # Check that output_dir already exists
+  if(!dir.exists(dir)){stop("dir doesn't exist")}
  
   # Create output_dir from dir and dataset name
   output_file = paste0(dir, "/", dataset, ".rds")
- 
-  # Check if output_dir already exists
-  if(!dir.exists(dir)){stop("dir doesn't exist")}
  
   # Extract the appropriate EH ID for the dataset
   eh_id = .experimenthub_ids[dataset, "wgbs"]
@@ -37,7 +37,7 @@ download_meth_dataset = function(dataset, dir = getwd()){
  
   # Check that two files were downloaded
   if(length(dataset_files) != 2){
-    stop(paste("There were", length(dataset_files), "files downloaded, however there should be only 2 files per dataset"))
+    stop(paste("There were", length(dataset_files), "files downloaded, however there should be exactly 2 files per dataset"))
   }
  
   # Identify H5 file
@@ -45,8 +45,12 @@ download_meth_dataset = function(dataset, dir = getwd()){
     tryCatch({rhdf5::h5ls(x); TRUE}, error = function(e) FALSE)))]
   rds_file = dataset_files[which(sapply(dataset_files, function(x)
     tryCatch({readRDS(x); TRUE}, error = function(e) FALSE)))]
+  
+  # Get current directory and indicate to change into it on exit
+  current_dir = getwd()
+  on.exit(setwd(current_dir))
  
-  # Get the locatin of the ExperimentHubCache and change into the directory
+  # Get the location of the ExperimentHubCache and change into the directory
   eh_cache = ExperimentHub::getExperimentHubOption("CACHE") 
   setwd(eh_cache)
   
@@ -55,10 +59,10 @@ download_meth_dataset = function(dataset, dir = getwd()){
   for(i in seq_along(SummarizedExperiment::assays(rse_temp, withDimnames = F))){
     slot(assay(rse_temp, i, withDimnames = F), "seed")@filepath = h5_file
   }
-  saveRDS(rse_temp, output_file)
+  base::saveRDS(rse_temp, output_file)
  
   # Create RangedSummarizedExperiment from output_dir
-  rse = readRDS(output_file)
+  rse = base::readRDS(output_file)
   return(rse)
  
 }
