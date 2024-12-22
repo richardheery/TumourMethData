@@ -74,6 +74,8 @@ download_meth_dataset = function(dataset, dir = getwd()){
 #' @return A data.frame with RNA-Seq counts calcualted using Kallisto. 
 #' @export
 #' @examples
+#' mcrpc_rnaseq = TumourMethData::download_rnaseq_dataset(dataset = "mcrpc_wgbs_hg38_chr11")
+#' print(mcrpc_rnaseq)
 download_rnaseq_dataset = function(dataset){
   
   # Load TumourMethDatasets and filter for datasets with RNA-Seq
